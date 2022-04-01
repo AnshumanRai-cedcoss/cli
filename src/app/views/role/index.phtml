@@ -1,0 +1,18 @@
+
+
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form(""); ?>
+ <h1 class="h3 mb-3 fw-normal"><?php echo  $this->locale->_('Adr')?></h1>
+
+  <div class="form-floating">
+      <?php echo $this->tag->textField(["jobProfile","class"=>"form-control"]); ?>
+      <label for="name"><?php echo  $this->locale->_('Job Profile')?></label>
+     </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->submitButton(
+   ["name" => "placeOrder","value"=>  $this->locale->_('Adr'), "class" => "w-100 btn btn-lg btn-primary"]
+); ?>
+   </div>
+</form>

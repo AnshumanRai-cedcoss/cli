@@ -1,0 +1,41 @@
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form(""); ?>
+ <h1 class="h3 mb-3 fw-normal"><?php echo $this->locale->_('adu') ?></h1>
+
+ <div class="form-floating">
+  <select name="jobProfile" class="w-100 text-center py-2">
+	<option value="">--- <?php echo $this->locale->_('Slr') ?> ---</option>
+    <?php for ($i=0; $i < count($data) ; $i++) { 
+        ?> <option><?php echo $data[$i];?></option><?php 
+    } ?>
+  </select>
+     </div>
+ <br>
+
+  <div class="form-floating">
+      <?php echo $this->tag->textField(["name","class"=>"form-control"]); ?>
+      <label for="name"><?php echo $this->locale->_('usernm') ?></label>
+     </div>
+
+     <div class="form-floating">
+      <?php echo $this->tag->textField(["email","class"=>"form-control"]); ?>
+      <label for="email"><?php echo $this->locale->_('email') ?></label>
+     </div>
+
+     <div class="form-floating">
+      <?php echo $this->tag->textField(["password","class"=>"form-control"]); ?>
+      <label for="password"><?php echo $this->locale->_('password') ?></label>
+     </div>
+
+     <div class="form-floating">
+      <?php echo $this->tag->textField(["rpassword","class"=>"form-control"]); ?>
+      <label for="rpassword"><?php echo $this->locale->_('rtpass') ?></label>
+     </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->submitButton(
+   ["name" => "placeOrder","value"=> "Register", "class" => "w-100 btn btn-lg btn-primary"]
+); ?>
+   </div>
+</form>

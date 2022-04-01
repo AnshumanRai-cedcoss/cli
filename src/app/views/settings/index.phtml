@@ -1,0 +1,39 @@
+<?php $lang= $this->request->get('lang');
+      $role= $this->request->get('bearer'); ?>
+
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form("settings/add?lang=".$lang."&bearer=".$role); ?>
+ <h1 class="h3 mb-3 fw-normal"><?php echo $this->locale->_('Apply Settings')?></h1>
+
+  <div class="form-floating py-2 ">
+      <select name="product" class="w-100 p-2 form-control text-center">
+	<option value="">------ <?php echo $this->locale->_('Optimize title')?> ------</option>
+     <option value="withTag"><?php echo $this->locale->_('With tags')?></option>
+     <option value="withoutTag"><?php echo $this->locale->_('Without tags')?></option>
+
+	
+</select>
+     </div>
+
+  <div class="form-floating py-2">
+  <?php echo $this->tag->textField(["defaultPrice","class"=>"form-control","value"=> $data[0]->defaultPrice]); ?>
+       <label for="defaultPrice"><?php echo $this->locale->_('Default Price')?></label>
+   </div>
+
+   <div class="form-floating py-2">
+  <?php echo $this->tag->textField(["defaultStock","class"=>"form-control","value"=> $data[0]->defaultStock]); ?>
+       <label for="defaultStock"><?php echo $this->locale->_('Default Stock')?></label>
+   </div>
+
+   <div class="form-floating py-2">
+  <?php echo $this->tag->textField(["defaultZip","class"=>"form-control","value"=> $data[0]->defaultZip]); ?>
+       <label for="defaultZip"><?php echo $this->locale->_('Default Zip')?></label>
+   </div>
+
+   <div class="form-floating py-2">
+       <?php echo $this->tag->submitButton(
+   ["name" => "addSett","value"=> $this->locale->_('Add Settings'), "class" => "w-100 btn btn-lg btn-primary"]
+); ?>
+   </div>
+</form>

@@ -1,0 +1,44 @@
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form(""); ?>
+ <h1 class="h3 mb-3 fw-normal"><?php echo $this->locale->_('Product Details')?></h1>
+
+  <div class="form-floating">
+      <?php echo $this->tag->textField(["name","class"=>"form-control"]); ?>
+      <label for="name"><?php echo $this->locale->_('Product Name')?></label>
+     </div>
+
+  <div class="form-floating">
+  <?php echo $this->tag->textArea(
+    [
+        "description",
+        "cols" => 50,
+        "rows" => 10,
+        "class" => "form-control"
+    ]
+    );
+    ?> 
+       <label for="description"><?php echo $this->locale->_('Description')?></label>
+   </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->textField(["tags","class"=>"form-control"]); ?>
+       <label for="tags"><?php echo $this->locale->_('Tags')?></label>
+   </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->textField(["price","class"=>"form-control"]); ?>
+       <label for="price"><?php echo $this->locale->_('Price')?></label>
+   </div>
+
+   <div class="form-floating">
+       <?php echo $this->tag->textField(["stock","class"=>"form-control"]); ?>
+       <label for="stock"><?php echo $this->locale->_('Stock')?></label>
+   </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->submitButton(
+   ["name" => "addProd","value"=>  $this->locale->_('adp'), "class" => "w-100 btn btn-lg btn-primary"]
+); ?>
+   </div>
+</form>

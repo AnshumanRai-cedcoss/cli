@@ -1,0 +1,34 @@
+<div class="container-fluid p-5 m-5">
+
+
+<div class="table-responsive">
+       <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col"><?php echo $this->locale->_('Id')?></th>
+                    <th scope="col"><?php echo $this->locale->_('Name')?></th>
+                    <th scope="col"><?php echo $this->locale->_('Description')?></th>
+                    <th scope="col"><?php echo $this->locale->_('Tags')?></th>
+                    <th scope="col"><?php echo $this->locale->_('Price')?></th>
+                    <th scope="col"><?php echo $this->locale->_('Stock')?></th>
+                  </tr>
+                </thead>
+                <tbody>
+          
+           <?php 
+            foreach ($data as $k => $v){
+              ?>
+                  <tr>
+                        <td> <?php echo $v->id  ?></td>
+                        <td> <?php echo $v->name  ?></td>
+                        <td> <?php echo $v->description  ?></td>
+                        <td> <?php echo $v->tags  ?></td>
+                        <td> <?php echo $v->price  ?></td>
+                        <td> <?php echo $v->stock  ?></td>
+                     </td></tr> <?php          
+            }
+            ?>  
+          </tbody>
+       </table>      
+      </div>
+      </div>

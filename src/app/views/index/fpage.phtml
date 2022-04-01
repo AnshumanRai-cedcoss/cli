@@ -1,0 +1,61 @@
+<?php
+$role= $this->request->get('bearer');
+$lang = $this->request->get('lang');
+
+echo "<h1>".$hello."</h1>";
+
+echo PHP_EOL;
+
+echo $this->tag->linkTo([
+    'product?bearer='.$role.'&lang='.$lang,
+     $this->locale->_('adp'),
+    'class' => 'btn btn-danger'
+    ]
+);
+?>  <br> <br> <?php
+echo $this->tag->linkTo([
+    'settings?bearer='.$role.'&lang='.$lang,
+     $this->locale->_('Ups'),
+    'class' => 'btn btn-success'
+    ]
+);
+
+?>  <br> <br> <?php
+echo $this->tag->linkTo([
+    'role?bearer='.$role.'&lang='.$lang,
+     $this->locale->_('Adr'),
+    'class' => 'btn btn-danger'
+    ]
+); ?>
+
+<br> <br> <?php
+echo $this->tag->linkTo([
+    'permission?bearer='.$role.'&lang='.$lang,
+     $this->locale->_('Gac'),
+    'class' => 'btn btn-warning'
+    ]
+);
+
+?>  <br> <br> <?php
+echo $this->tag->linkTo([
+    'orders?bearer='.$role.'&lang='.$lang,
+     $this->locale->_('Plo'),
+    'class' => 'btn btn-success'
+]
+); ?>
+
+<br> <br> <?php
+echo $this->tag->linkTo([
+    'orders/list?bearer='.$role.'&lang='.$lang,
+    $this->locale->_('Lo'),
+    'class' => 'btn btn-primary'
+]
+); ?>
+
+<br> <br> <?php
+echo $this->tag->linkTo([
+    'product/list?bearer='.$role.'&lang='.$lang,
+     $this->locale->_('Lp'),
+    'class' => 'btn btn-warning'
+]
+); ?>

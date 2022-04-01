@@ -1,0 +1,65 @@
+
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form(""); ?>
+ <h1 class=" mb-3 fw-normal"><?php echo  $this->locale->_('Gac')?>
+  <div class="form-floating">
+  <select name="jobProfile" class="w-75 h6 text-center py-2">
+	<option value="">--- <?php echo  $this->locale->_('Slr')?> ---</option>
+    <?php for ($i=0; $i < count($data) ; $i++) { 
+        ?> <option><?php echo $data[$i];?></option><?php 
+    } ?>
+  </select>
+     </div>
+  
+     <div class="form-floating">
+  <select name="controller" class="w-75 h6 text-center py-2">
+	<option value="">--- <?php echo  $this->locale->_('Select Controller')?> ---</option>
+    <?php foreach ($resultC as $key => $value) { 
+        ?> <option> <?php echo $key;?>  </option>  <?php 
+    } ?>
+  </select>
+     </div>
+
+<div class="form-floating">
+  <select name="action" class="w-75 h6 text-center py-2" >
+            <option selected disabled>---<?php echo  $this->locale->_('Select Action')?>---</option>
+            <?php
+            $html="";
+            foreach ($action as $k ) {
+                $html.='<option>'.$k.'</option>';
+            }
+            $html.='</select>';
+            echo $html;
+
+            ?>
+
+</div>
+
+
+<div class="form-floating">
+<?php
+
+    echo Phalcon\Tag::checkField(
+     [
+        "access",
+        "value" => "grant",
+     ]
+); ?>
+     </div>
+
+<br>
+  <div class="form-floating">
+       <?php echo $this->tag->submitButton(
+   ["name" => "placeOrder","value"=> $this->locale->_('Gac'), "class" => "w-75 btn btn-lg btn-primary"]
+); ?>
+   </div>
+
+   <div class="form-floating text-danger">
+       <?php if(isset($error))
+       {
+           echo $error;
+       }?>
+   </div>
+
+</form>

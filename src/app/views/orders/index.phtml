@@ -1,0 +1,45 @@
+
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form(""); ?>
+ <h1 class="h3 mb-3 fw-normal"><?php echo $this->locale->_('Plo') ?></h1>
+
+  <div class="form-floating">
+      <?php echo $this->tag->textField(["customerName","class"=>"form-control"]); ?>
+      <label for="name"><?php echo $this->locale->_('Customer Name') ?></label>
+     </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->textField(["address","class"=>"form-control"]); ?>
+       <label for="address"><?php echo $this->locale->_('address') ?></label>
+   </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->textField(["zip","class"=>"form-control"]); ?>
+       <label for="zip"><?php echo $this->locale->_('zip') ?></label>
+   </div>
+
+   <div class="form-floating">
+  
+   <select name="product" class="w-100 p-2">
+	<option value="">--- <?php echo $this->locale->_('Choose a product') ?> ---</option>
+    <?php for ($i=0; $i < count($data) ; $i++) { 
+        ?> <option value="<?php echo $data[$i] ;?>"><?php echo $data[$i];?></option><?php 
+    } ?>
+	
+</select>
+
+   </div>
+
+   <div class="form-floating">  <?php
+
+       echo $this->tag->textField(["quantity","class"=>"form-control"]); ?>
+       <label for="quantity"> <?php echo $this->locale->_('quantity') ?></label>
+   </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->submitButton(
+   ["name" => "placeOrder","value"=> $this->locale->_('Plo'), "class" => "w-100 btn btn-lg btn-primary"]
+); ?>
+   </div>
+</form>

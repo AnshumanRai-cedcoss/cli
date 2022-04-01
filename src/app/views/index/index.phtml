@@ -1,0 +1,36 @@
+<?php
+$role=$this->request->get('bearer');
+$lang=$this->request->get('lang');
+
+echo "<h1>".$this->locale->_('hlu')."</h1>"; ?>
+<div class="form-floating"> <?php
+   echo  $this->tag->form("")?>
+<select name="language" class="w-10 p-2">
+
+       <option value="en"><?php echo $this->locale->_('chl') ?></option>
+        <option value="en"><?php echo $this->locale->_('English') ?></option>
+        <option value="fr"><?php echo $this->locale->_('French') ?></option>
+</select>
+
+    
+    <?php echo $this->tag->submitButton(
+["name" => "placeOrder","value"=> $this->locale->_('change') , "class" => "w-10 btn btn-primary"]
+); ?>
+</form>
+
+<?php
+echo $this->tag->linkTo([
+    'signup/add?bearer='.$role.'&lang='.$lang,
+     $this->locale->_('ctr') ,
+    'class' => 'btn btn-primary'
+    ]
+);
+?>  <br> <br>
+<?php 
+echo $this->tag->linkTo([
+    'index/fpage?bearer='.$role.'&lang='.$lang,
+     $this->locale->_('gthp') ,
+    'class' => 'btn btn-primary'
+    ]
+);
+?>
